@@ -1,0 +1,339 @@
+html,
+body {
+    height: 100%;
+}
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+    width: 90%;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view td {
+    white-space: nowrap;
+}
+
+.grid-view .filters input,
+.grid-view .filters select {
+    min-width: 50px;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav li > form > button.logout {
+    padding: 15px;
+    border: none;
+}
+
+@media(max-width:767px) {
+    .nav li > form > button.logout {
+        display:block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+    text-decoration: none;
+}
+
+.nav > li > form > button.logout:focus {
+    outline: none;
+}
+.data-tables-info{
+    margin: 30px 0px 30px 10px;
+}
+.data-tables-page{
+    text-align: right;
+    margin-right: 10px;
+}
+.filters td span
+{
+    padding: 6px 0 0 0;
+    line-height: 1.42857143;
+}
+.pagination {
+    margin: 0;
+}
+/* reset */
+span,h1,h2,h3,h4,h5,h6,p,pre,a,code,em,img,strong,b,i,ul,li{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+ul{
+    list-style: none;
+}
+/* base */
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+h1,h2,h3,p,img,ul li{
+    font-family: Arial,sans-serif;
+    color: #505050;
+}
+/*corresponds to min-width of 860px for some elements (.header .footer .element ...)*/
+@media screen and (min-width: 960px) {
+    html,body{
+        overflow-x: hidden;
+    }
+}
+
+/* call stack */
+.call-stack{
+    /*margin-top: 30px;*/
+    /*margin-bottom: 40px;*/
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.call-stack ul li{
+    margin: 1px 0;
+}
+.call-stack ul li .element-wrap{
+    cursor: pointer;
+    padding: 15px 0;
+    background-color: #fdfdfd;
+}
+.call-stack ul li.application .element-wrap{
+    background-color: #fafafa;
+}
+.call-stack ul li .element-wrap:hover{
+    background-color: #edf9ff;
+}
+.call-stack ul li .element{
+    min-width: 860px;
+    margin: 0 auto;
+    /*padding: 0 50px;*/
+    padding: 0 100px;
+    position: relative;
+}
+.call-stack ul li a{
+    color: #505050;
+}
+.call-stack ul li a:hover{
+    color: #000;
+}
+.call-stack ul li .item-number{
+    width: 45px;
+    display: inline-block;
+}
+.call-stack ul li .text{
+    color: #aaa;
+}
+.call-stack ul li.application .text{
+    color: #505050;
+}
+.call-stack ul li .at{
+    float: right;
+    display: inline-block;
+    width: 7em;
+    padding-left: 1em;
+    text-align: left;
+    color: #aaa;
+}
+.call-stack ul li.application .at{
+    color: #505050;
+}
+.call-stack ul li .line{
+    display: inline-block;
+    width: 3em;
+    text-align: right;
+}
+.call-stack ul li .code-wrap{
+    display: none;
+    position: relative;
+}
+.call-stack ul li.application .code-wrap{
+    display: block;
+}
+.call-stack ul li .error-line,
+.call-stack ul li .hover-line{
+    background-color: #ffebeb;
+    position: absolute;
+    width: 100%;
+    /*z-index: 100;*/
+    margin-top: 0;
+}
+.call-stack ul li .hover-line{
+    background: none;
+}
+.call-stack ul li .hover-line.hover,
+.call-stack ul li .hover-line:hover{
+    background: #edf9ff !important;
+}
+.call-stack ul li .code{
+    min-width: 860px; /* 960px - 50px * 2 */
+    margin: 15px auto;
+    padding: 0 50px;
+    position: relative;
+}
+.call-stack ul li .code .lines-item{
+    position: absolute;
+    z-index: 200;
+    display: block;
+    width: 25px;
+    text-align: right;
+    color: #aaa;
+    line-height: 20px;
+    font-size: 12px;
+    margin-top: 1px;
+    font-family: Consolas, monospace;
+}
+.call-stack ul li .code pre{
+    position: relative;
+    z-index: 200;
+    left: 50px;
+    line-height: 20px;
+    font-size: 12px;
+    font-family: Consolas, monospace;
+    display: inline;
+}
+@-moz-document url-prefix() {
+    .call-stack ul li .code pre{
+        line-height: 20px;
+    }
+}
+
+/* request */
+.request{
+    background-color: #fafafa;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 1px;
+}
+.request .code{
+    min-width: 860px; /* 960px - 50px * 2 */
+    margin: 0 auto;
+    padding: 15px 50px;
+}
+.request .code pre{
+    font-size: 14px;
+    line-height: 18px;
+    font-family: Consolas, monospace;
+    display: inline;
+    word-wrap: break-word;
+}
+
+/* highlight.js */
+.comment{
+    color: #808080;
+    font-style: italic;
+}
+.keyword{
+    color: #000080;
+}
+.number{
+    color: #00a;
+}
+.number{
+    font-weight: normal;
+}
+.code .php .string{
+    white-space: normal;
+}
+.string, .value{
+    color: #0a0;
+}
+.symbol, .char {
+    color: #505050;
+    background: #d0eded;
+    font-style: italic;
+}
+.phpdoc{
+    text-decoration: underline;
+}
+.variable{
+    color: #a00;
+}
+
+body pre {
+    pointer-events: none;
+}
+body.mousedown pre {
+    pointer-events: auto;
+}
