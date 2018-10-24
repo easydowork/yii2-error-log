@@ -21,4 +21,4 @@ Yii::setAlias('@adminlog', dirname(dirname(__DIR__)) . '/adminlog');
 chmod 0777 error_log.db 
 chmod 0777 runtime/
 ```
-
+添加一个二级域名，独立访问。指向 `admin/web` 目录下
