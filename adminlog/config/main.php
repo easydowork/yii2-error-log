@@ -47,6 +47,9 @@ return [
                 ],
             ],
         ],
+        'assetManager' => [
+            'appendTimestamp' => true,//添加时间戳
+        ],
     ],
     'params'              => $params,
 ];
