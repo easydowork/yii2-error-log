@@ -89,6 +89,14 @@ class ErrorDbTarget extends Target
                     $text = Yii::$app->errorHandler->renderCallStack($text);
                 } else {
                     $text = VarDumper::export($text);
+                    $title = mb_strcut($text,0,50);
+                    $traces = [];
+                    if (isset($message[4])) {
+                        foreach ($message[4] as $trace) {
+                            $traces[] = "in {$trace['file']}:{$trace['line']}";
+                        }
+                    }
+                    $text = (empty($traces) ? '' : ("<br>" . implode("<br>", $traces)."<br>")).$text;
                 }
 
                 if ( $command->bindValues([
