@@ -5,9 +5,12 @@
 $this->title = '异常日志';
 
 $js = <<< JS
-$('.viewInfo').click(function() {
+$('.viewInfo').click(function(e) {
     $(this).next('.summary').toggle();
     errorMessage($(this).next('.summary')[0]);
+});
+$('.viewInfo').find('input[type=checkbox]').click(function(e) {
+    e.stopPropagation();
 });
 
 $("#all-delete").on("click", function () {
