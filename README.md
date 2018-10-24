@@ -18,7 +18,7 @@ $sqliteConfig = require '../../adminlog/config/sqlite.php';
 //common/config/bootstrap.php
 Yii::setAlias('@adminlog', dirname(dirname(__DIR__)) . '/adminlog');
 
-chmod 0777 error_log.db
-
+chmod 0777 error_log.db 
+chmod 0777 runtime/
 ```
 
