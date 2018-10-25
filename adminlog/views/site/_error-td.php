@@ -24,7 +24,7 @@ $request = '<pre>' . rtrim($request, "\n") . '</pre>';
     <td colspan="10">
         <div class="col-sm-12">
             <div class="call-stack">
-                <?= $model->message ?>
+                <?= nl2br($model->message) ?>
             </div>
             <div class="request">
                 <div class="code">

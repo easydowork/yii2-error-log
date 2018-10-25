@@ -70,7 +70,7 @@ $this->registerJs($js);
                              return ['title' => $model->title];
                          },
                          'value'          => function ($model) {
-                             return mb_strcut($model->title, 0, 50);
+                             return mb_strcut(strip_tags($model->title), 0, 50);
                          }
                         ],
                         //                        'get',
@@ -81,9 +81,9 @@ $this->registerJs($js);
                         //                        'server',
                         'create_at',
                         [
-                            'class'    => 'yii\grid\ActionColumn',
-                            'template' => '{delete}',
-                            'header'   => '操作',
+                            'class'         => 'yii\grid\ActionColumn',
+                            'template'      => '{delete}',
+                            'header'        => '操作',
                             'filterOptions' => ['id' => 'all-delete'],
                         ],
                     ],

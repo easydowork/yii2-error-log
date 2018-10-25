@@ -6,10 +6,8 @@ use Yii;
 use yii\log\Target;
 use yii\di\Instance;
 use yii\db\Connection;
-use yii\web\ErrorHandler;
 use yii\helpers\VarDumper;
 use yii\helpers\ArrayHelper;
-use yii\log\LogRuntimeException;
 
 /**
  * Class ErrorDbTarget
@@ -62,7 +60,7 @@ class ErrorDbTarget extends Target
     }
 
     /**
-     * @throws LogRuntimeException
+     * @throws \Exception
      * @throws \yii\db\Exception
      */
     public function export()
@@ -103,7 +101,7 @@ class ErrorDbTarget extends Target
                         ':level'       => $level,
                         ':category'    => $category,
                         ':ip'          => Yii::$app->request->getUserIP(),
-                        ':title'       => $title??'',
+                        ':title'       => $title,
                         ':message'     => $text,
                         ':get'         => $result['_GET'] ?? '',
                         ':post'        => $result['_POST'] ?? '',
@@ -117,7 +115,7 @@ class ErrorDbTarget extends Target
                     ])->execute() > 0 ) {
                     continue;
                 }
-                throw new LogRuntimeException('Unable to export log through database!');
+                throw new \Exception('Unable to export log through database!');
             }
         }
     }
