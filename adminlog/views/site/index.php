@@ -55,10 +55,24 @@ $this->registerJs($js);
                         ],
                         'user_id',
                         'level',
-                        'request_uri',
+                        ['attribute'      => 'request_uri',
+                         'contentOptions' => function ($model) {
+                             return ['title' => $model->request_uri];
+                         },
+                         'value'          => function ($model) {
+                             return mb_strcut($model->request_uri, 0, 50);
+                         }
+                        ],
                         'category',
                         'ip',
-                        'title',
+                        ['attribute'      => 'title',
+                         'contentOptions' => function ($model) {
+                             return ['title' => $model->title];
+                         },
+                         'value'          => function ($model) {
+                             return mb_strcut($model->title, 0, 50);
+                         }
+                        ],
                         //                        'get',
                         //                        'post',
                         //                        'files',
