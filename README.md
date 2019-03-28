@@ -2,10 +2,7 @@
 //common/config 添加数据库配置
 $sqliteConfig = require '../../adminlog/config/sqlite.php';
 'sqlite' => $sqliteConfig,
-//错误界面渲染界面。基于系统的视图文件把空格去掉 这样展示界面样式好很多
-'errorHandler' => [
-    'callStackItemView' => '@adminlog/components/newCallStackItem.php',
-],
+
 //配置 log 组件
 'log' => [
     'targets' => [
